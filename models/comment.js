@@ -10,12 +10,12 @@ const ReplySchema = new Schema(
     },
     replyBody: {
       type: String,
-      required: true,
-      trim: true
+      required: true
     },
     writtenBy: {
       type: String,
-      required:true
+      required: true,
+      trim: true
     },
     createdAt: {
       type: Date,
@@ -33,16 +33,16 @@ const ReplySchema = new Schema(
 const CommentSchema = new Schema(
   {
     writtenBy: {
-      type: String
+      type: String,
+      required: true
     },
     commentBody: {
       type: String,
-      required:true
+      required: true
     },
     createdAt: {
       type: Date,
       default: Date.now,
-      required:true,
       get: createdAtVal => dateFormat(createdAtVal)
     },
     // use ReplySchema to validate data for a reply
