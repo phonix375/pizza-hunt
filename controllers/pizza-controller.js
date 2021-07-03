@@ -13,7 +13,7 @@ const pizzaController = {
       .then(dbPizzaData => res.json(dbPizzaData))
       .catch(err => {
         console.log(err);
-        res.sendStatus(400).json(err);
+        res.sendStatus(400);
       });
   },
 
